@@ -1,8 +1,12 @@
-##SafeJourney
-API key for google map api's is stored in app.json - fix
+## SafeJourney
 
-required - root file named .env containing API_KEY=..your google maps api key with directions enabled
+Lone traveller safety app.
 
+required - root file named .env containing EXPO_PUBLIC_API_KEY=..your google maps api key with directions enabled
+
+API key for google map api's is also stored in app.json 
+
+`````
 You will need this data in app.json in root:
 {
     "expo": {

@@ -1,4 +1,3 @@
-
 {
   "expo": {
     "name": "SafeJourney2",
@@ -21,7 +20,7 @@
     "android": {
       "config": {
         "googleMaps": {
-          "apiKey": "**your maps api key goes here**"
+          "apiKey": "google maps api key also goes here"
         }
       },
       "adaptiveIcon": {
@@ -32,6 +31,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4012d325-277c-4f9c-aadb-26f67b6e24aa"
+      }
     }
   }
 }
