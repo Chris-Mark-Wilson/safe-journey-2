@@ -10,14 +10,40 @@ When you get home your journey is cancelled and your friends know you're home sa
 
 To add a friend simply type in their phone number and if they have signed up and are in the database, they will be added to your friends list.
 
-<img src='./assets/scr2.jpg' width='200'><img src='./assets/scr3.jpg' width='200'><img src='./assets/scr4.jpg' width='200'><img src='./assets/scr5.jpg' width='200'><img src='./assets/scr6.jpg' width='200'><img src='./assets/scr7.jpg' width='200'>
+<img src='./assets/scr2.jpg' width='200'/><img src='./assets/scr3.jpg' width='200'/><img src='./assets/scr4.jpg' width='200'/><img src='./assets/scr5.jpg' width='200'/><img src='./assets/scr6.jpg' width='200'/><img src='./assets/scr7.jpg' width='200'/>
 
-API key for google map api's is stored in app.json - fix
 
-required - root file named .env containing API_KEY=..your google maps api key with directions enabled
+
+### Installation
+
+Fork and clone the repo.
 
 `````
-You will need this data in app.json in root:
+cd safe-journey-2 && npm i
+`````
+
+create an account at https://expo.dev
+download expo go onto an android device
+
+`````
+npx expo start
+`````
+make sure you're on the same network as the machine you're using for coding
+If you're not directly connected (127.0.0.1) and have another ip such as 192.168.1.xx
+
+`````
+npx expo start --tunnel
+`````
+you can now run the app on your device
+
+
+
+required - root file named .env containing EXPO_PUBLIC_API_KEY=[your google maps api key with directions enabled]
+
+API key for google map api's is stored also stored in app.json 
+
+`````
+You will need this data in app.json in the root directory of the project
 {
     "expo": {
       "name": "SafeJourney",
@@ -54,3 +80,4 @@ You will need this data in app.json in root:
       }
     }
   }
+  `````
