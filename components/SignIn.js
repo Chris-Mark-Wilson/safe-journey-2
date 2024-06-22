@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+
 import React, { useState, useContext } from "react";
 import {
   StyleSheet,
@@ -62,13 +62,15 @@ export function SignIn({ navigation }) {
         })
         .catch((err) => {
           setIsLoading(false);
-          showAlert('Failed to log in');
+          showAlert(err);
         });
     }
   }
 
-  function showAlert(msg) {
-    Alert.alert(msg);
+  function showAlert(err) {
+    if(err.status){
+    Alert.alert(`status:${err.status}, ${err.msg}`);
+    } else Alert.alert('Failure to login',err)
   }
 
   return isLoading ? (

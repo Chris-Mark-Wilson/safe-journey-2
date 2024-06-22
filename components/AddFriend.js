@@ -17,13 +17,13 @@ export const AddFriend=()=>{
           showAlert(`Friend added`)
         })
        .catch((err) => {
-          showAlert('Could not add friend')
+          showAlert('Could not add friend',err)
         })
       }
     }
     
-  function showAlert(msg) {
-      Alert.alert(msg)
+  function showAlert(msg,err) {
+      Alert.alert(msg,`status:${err.status}, ${err.msg}`)
   }
 
   return(

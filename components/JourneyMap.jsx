@@ -3,10 +3,10 @@ import MapView from "react-native-maps";
 import { PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { Marker } from "react-native-maps";
-import { API_KEY } from "@env";
+
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
-
+const API_KEY=process.env.EXPO_PUBLIC_API_KEY;
 export default function JourneyMap({
   region,
   data,

@@ -11,7 +11,7 @@ import { checkIfJourneyEnd } from '../utils/checkIfJourneyEnd'
 import GoogleApi from "./GoogleApi";
 import {CancelJourney} from './CancelJourney'
 import {SignIn} from './SignIn'
-import * as Notifications from 'expo-notifications';
+
 import { updateFriendList } from "../utils/updateFriendList";
 
 
@@ -35,7 +35,7 @@ export const Home = ({navigation}) => {
 
     useEffect(()=>{
       setTimeout(()=>{
-        console.log("tick..")
+        // console.log("tick.. 5 second timer in components/home.js")
         setTimer(timer+1)
         },timerInterval)
     },[timer])
@@ -43,8 +43,8 @@ export const Home = ({navigation}) => {
     useEffect(() => {
         {userData.user_id && updateFriendList(userData.user_id, friendList, setFriendList,friendData,setFriendData)}
       
-
-    }, [timer, userData])
+//depends on timer,and userData both removed from dependency array for clarity
+    }, [userData])
 
     useEffect(() => {
       if(whosJourney==='user'){

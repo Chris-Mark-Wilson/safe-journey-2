@@ -5,11 +5,11 @@ import {
   Pressable,
   StyleSheet,
 } from "react-native";
-import { appStyle } from "../styles/appStyle";
+
 import { useContext } from "react";
 import { FriendContext } from "../context/friendContext";
 import { FriendListContext } from "../context/friendListContext";
-import { ScrollView } from "react-native-gesture-handler";
+
 
 
 const Item = ({ name,isBold }) => (

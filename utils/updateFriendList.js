@@ -11,7 +11,9 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
       shouldSetBadge: true,
     }),
   });
-  console.log(id)
+  console.log(id,'my id from utils/updatefriendslist')
+
+  if(id){
   getFriends(id)
     .then((newFriendList) => {
     
@@ -59,7 +61,9 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
       setFriendList(newFriendList);
 
   }).catch((err) => {
-    console.log('didnt update, trying again');
+ 
+    Alert.alert('Error in update friends list',`status:${err.status},${err.msg}`)
 
   });
+}
 };

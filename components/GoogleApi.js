@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete"
-import{API_KEY} from '@env'
+
 import { StartJourney } from "./StartJourney";
 import { UserContext } from "../context/userContext";
+const API_KEY=process.env.EXPO_PUBLIC_API_KEY;
 
 const GoogleApi = ({ setTravelType }) => { 
 
