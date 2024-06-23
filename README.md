@@ -29,7 +29,7 @@ download expo go onto an android device
 npx expo start
 `````
 make sure you're on the same network as the machine you're using for coding
-If you're not directly connected (127.0.0.1) and have another ip such as 192.168.1.xx
+If you're not directly (using wsl for example)
 
 `````
 npx expo start --tunnel
