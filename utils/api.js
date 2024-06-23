@@ -1,7 +1,7 @@
 import axios from "axios";
-
+const baseUrl=process.env.EXPO_PUBLIC_BASE_URL;
 const users = axios.create({
-  baseURL: "https://be-safejourney-lzyy.onrender.com/api",
+  baseURL:baseUrl,
 });
 
 export const getFriends = async (id) => {
