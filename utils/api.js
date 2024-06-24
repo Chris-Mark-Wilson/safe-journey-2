@@ -1,15 +1,15 @@
 import axios from "axios";
-const baseUrl=process.env.EXPO_PUBLIC_BASE_URL;
+const baseUrl="https://be-safejourney-lzyy.onrender.com/api";
 const users = axios.create({
   baseURL:baseUrl,
 });
-let getFreindsPending=false;
 
+let getFreindsPending=false;
 export const getFriends = async (id) => {
   if(getFreindsPending) return
   try {
     getFreindsPending=true;
-    console.log(`fired get friends in api with id ${id},${typeof(id)} `)
+    // console.log(`fired get friends in api with id ${id},${typeof(id)} `)
     const response = await users.get(`/users/${id}/friends`);
     if (!response.data) console.log("no data in getFreinds");
     getFreindsPending=false

@@ -4,10 +4,10 @@
     "slug": "SafeJourney2",
     "version": "2.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/SJ-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/safe-journey-start-screen-blue-final.png",
       "resizeMode": "contain",
       "backgroundColor": "#FFFFFF"
     },
@@ -20,21 +20,21 @@
     "android": {
       "config": {
         "googleMaps": {
-          "apiKey": "google maps api key also goes here"
+          "apiKey": ""
         }
       },
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/SJ-adaptive-icon.png",
+        "backgroundColor": "#248DFF"
       },
-      "package": "com.bigsegs.SafeJourney"
+      "package": "com.bigsegs.SafeJourney2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "4012d325-277c-4f9c-aadb-26f67b6e24aa"
+        "projectId": "b5547f79-86f1-434a-b096-74f839dcbb8f"
       }
     }
   }
