@@ -40,7 +40,7 @@ you can now run the app on your device
 
 required - root file named .env containing EXPO_PUBLIC_API_KEY=[your google maps api key with directions enabled]
 
-API key for google map api's is stored also stored in app.json 
+API key for google map api's is stored also stored in app.json, eas.json
 
 `````
 You will need this data in app.json in the root directory of the project
