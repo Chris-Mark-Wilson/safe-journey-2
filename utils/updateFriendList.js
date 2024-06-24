@@ -2,8 +2,13 @@ import { Alert } from "react-native";
 import { getFriends } from "./api";
 import * as Notifications from "expo-notifications";
 
-export const updateFriendList = (id, friendList, setFriendList,friendData,setFriendData) => {
-
+export const updateFriendList = (
+  id,
+  friendList,
+  setFriendList,
+  friendData,
+  setFriendData
+) => {
   Notifications.setNotificationHandler({
     handleNotification: async () => ({
       shouldShowAlert: true,
@@ -11,15 +16,13 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
       shouldSetBadge: true,
     }),
   });
-  console.log(id,'my id from utils/updatefriendslist')
+  console.log(id, "my id from utils/updatefriendslist");
 
- 
   getFriends(id)
     .then((newFriendList) => {
       // console.log(newFriendList,'newfriendlist')
-    
-      if (newFriendList) {
 
+      if (newFriendList) {
         friendList.forEach((friend, index) => {
           if (friend.location.status !== newFriendList[index].location.status) {
             if (!friend.location.status) {
@@ -60,11 +63,14 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
         });
         setFriendList(newFriendList);
       }
-
-  }).catch((err) => {
-console.log(err)
-    Alert.alert('Error in update friends list',`status:${err.status},${err.msg}`)
-
-  });
-
+    })
+    .catch((err) => {
+      console.log(err);
+      if (err.status && err.msg) {
+        Alert.alert(
+          "Error in update friends list",
+          `status:${err.status},${err.msg}`
+        );
+      }
+    });
 };
