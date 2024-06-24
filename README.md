@@ -40,6 +40,8 @@ you can now run the app on your device
 
 required - root file named .env containing EXPO_PUBLIC_API_KEY=[your google maps api key with directions enabled]
 
+if you intend to build an apk using eas build you will need to add the following.
+
 API key for google map api's is stored also stored in app.json, eas.json
 
 `````
@@ -55,3 +57,39 @@ You will need this data in app.json in the root directory of the project
         },
    
   `````
+eas.json
+ `````
+{
+  "cli": {
+    "version": ">= 10.0.2"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "EXPO_PUBLIC_API_KEY (google maps api key)"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+      
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+
+
+
+
+
+
+
+
+
