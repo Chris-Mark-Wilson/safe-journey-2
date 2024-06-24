@@ -13,11 +13,12 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
   });
   console.log(id,'my id from utils/updatefriendslist')
 
-  if(id){
+ 
   getFriends(id)
     .then((newFriendList) => {
+      // console.log(newFriendList,'newfriendlist')
     
-      if (friendList.length) {
+      if (newFriendList) {
 
         friendList.forEach((friend, index) => {
           if (friend.location.status !== newFriendList[index].location.status) {
@@ -57,13 +58,13 @@ export const updateFriendList = (id, friendList, setFriendList,friendData,setFri
             }
           }
         });
+        setFriendList(newFriendList);
       }
-      setFriendList(newFriendList);
 
   }).catch((err) => {
- 
+console.log(err)
     Alert.alert('Error in update friends list',`status:${err.status},${err.msg}`)
 
   });
-}
+
 };

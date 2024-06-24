@@ -17,7 +17,7 @@ import { updateFriendList } from "../utils/updateFriendList";
 
 
 export const Home = ({navigation}) => {  
-  const timerInterval = 5000;
+  const timerInterval = 30000;
   const [zoomLevel,setZoomLevel]=useState(0.005)
 
   const { userData, setUserData } = useContext(UserContext);
@@ -41,7 +41,7 @@ export const Home = ({navigation}) => {
     },[timer])
 
     useEffect(() => {
-        {userData.user_id && updateFriendList(userData.user_id, friendList, setFriendList,friendData,setFriendData)}
+        {userData.user_id && friendList && friendData && updateFriendList(userData.user_id, friendList, setFriendList,friendData,setFriendData)}
       
 //depends on timer,and userData both removed from dependency array for clarity
     }, [userData])
@@ -82,9 +82,13 @@ export const Home = ({navigation}) => {
       }
       if(whosJourney==='friend'){
         setTimeout(() => {
-          getFriendById(friendData.user_id).then((user) => {
+          getFriendById(friendData.user_id).then((friend) => {
             console.log('friend updated');
-            setFriendData(user)
+            setFriendData((oldData)=>{
+              const newData=JSON.parse(JSON.stringify(friend));
+              return newData;
+              console.log('updating friend data in home')
+            })
           }).catch((err) => {
             console.log('cant update friend');
           })  
@@ -92,10 +96,12 @@ export const Home = ({navigation}) => {
       }
     }, [timer])
 
+    //if viewing my map and not on a journey.. runs on the timer
   useEffect(() => {
     if (whosJourney === null) {  //whosJourney === "user" || 
       // setIsLoading(true);
-      getLocation(userData).then(({ latitude, longitude }) => {
+      getLocation(userData)
+      .then(({ latitude, longitude }) => {
         setUserData((currUserData) => {
           const newData = JSON.parse(JSON.stringify(currUserData));
           newData.location.current = {
@@ -112,7 +118,7 @@ export const Home = ({navigation}) => {
         });
         // setIsLoading(false);
       })
-      .catch(err=>{console.log(err,"in 2nd use effect of home line 117")});
+      .catch(err=>{console.log(err,"in 2nd use effect of home line 119")});
     }
   }, [whosJourney, userData.user_id, timer]);
 
@@ -132,7 +138,7 @@ export const Home = ({navigation}) => {
 
   useEffect(() => {
     setWhosJourney(userData.location.status ? "user" : null);
-  }, [userData])
+  }, [userData.location.status])
 
   const handleReturn = () => {
     setFriendData({   

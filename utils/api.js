@@ -3,20 +3,26 @@ const baseUrl=process.env.EXPO_PUBLIC_BASE_URL;
 const users = axios.create({
   baseURL:baseUrl,
 });
+let getFreindsPending=false;
 
 export const getFriends = async (id) => {
+  if(getFreindsPending) return
   try {
+    getFreindsPending=true;
+    console.log(`fired get friends in api with id ${id},${typeof(id)} `)
     const response = await users.get(`/users/${id}/friends`);
     if (!response.data) console.log("no data in getFreinds");
-
+    getFreindsPending=false
     return response.data.friendList;
   } catch (err) {
     if (err.response) {
+      getFreindsPending=false
       console.log(err.response.data);
       console.log(err.response.status);
     //   console.log(err.response.headers);
     throw err.response.data;
     }
+    getFreindsPending=false
     console.log(err, "err in getFriends called from ");
     throw err;
   }
