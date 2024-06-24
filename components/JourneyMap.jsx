@@ -6,7 +6,7 @@ import { Marker } from "react-native-maps";
 
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
-const API_KEY="AIzaSyARh4RFtAdAJbWnIv2kytSV20LLnGeWic4";
+const API_KEY=process.env.EXPO_PUBLIC_API_KEY;
 export default function JourneyMap({
   region,
   data,
