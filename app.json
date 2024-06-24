@@ -21,7 +21,7 @@
       "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "config": {
         "googleMaps": {
-          "apiKey": "google maps api key"
+          "apiKey": "AIzaSyARh4RFtAdAJbWnIv2kytSV20LLnGeWic4"
         }
       },
       "adaptiveIcon": {
