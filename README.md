@@ -12,7 +12,7 @@ To add a friend simply type in their phone number and if they have signed up and
 
 <img src='./assets/scr2.jpg' width='200'/><img src='./assets/scr3.jpg' width='200'/><img src='./assets/scr4.jpg' width='200'/><img src='./assets/scr5.jpg' width='200'/><img src='./assets/scr6.jpg' width='200'/><img src='./assets/scr7.jpg' width='200'/>
 
-[View Video](./assets/safeJourneyVideo.mp4)
+[View Video](https://cmwebserver.ddns.net/video/safeJourneyVideo.mp4)
 
 ### Installation
 
