@@ -5,12 +5,18 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "AIzaSyARh4RFtAdAJbWnIv2kytSV20LLnGeWic4",
+        "EXPO_PUBLIC_BASE_URL":"https://be-safejourney-lzyy.onrender.com/api"
+      },
+      "android": {
+        "buildType": "apk"
+      }
     },
     "preview": {
       "env": {
-        "EXPO_PUBLIC_API_KEY": "",
-        "EXPO_PUBLIC_BASE_URL":""
+        "EXPO_PUBLIC_API_KEY": "AIzaSyARh4RFtAdAJbWnIv2kytSV20LLnGeWic4",
+        "EXPO_PUBLIC_BASE_URL":"https://be-safejourney-lzyy.onrender.com/api"
       },
       "android": {
         "buildType": "apk"

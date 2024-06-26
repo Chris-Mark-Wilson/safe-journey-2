@@ -1,3 +1,7 @@
+
+import 'react-native-gesture-handler';
+import { enableScreens} from 'react-native-screens'
+enableScreens();
 import * as React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
